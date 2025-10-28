@@ -127,7 +127,7 @@ export default function OnboardingPage() {
                             <input
                                 id="company"
                                 type="text"
-                                {...register('company')}
+                                {...register('companyName')}
                                 placeholder="Nome da sua empresa"
                                 className="w-full px-6 py-5 text-lg bg-slate-900/50 border-2 border-slate-700 rounded-2xl text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 transition-all duration-300 outline-none hover:border-slate-600"
                             />
