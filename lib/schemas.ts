@@ -16,6 +16,7 @@ export type LoginFormData = z.infer<typeof loginSchema>;
 
 // Schema de Onboarding
 export const onboardingSchema = z.object({
+  name: z.string().min(2, 'Nome deve ter pelo menos 2 caracteres'),
   apiKey: z.string().min(1, 'API Key é obrigatória'),
   companyName: z.string().min(2, 'Nome da empresa deve ter pelo menos 2 caracteres'),
   industry: z.string().min(2, 'Setor é obrigatório'),
