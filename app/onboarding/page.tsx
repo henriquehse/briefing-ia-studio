@@ -145,8 +145,8 @@ export default function OnboardingPage() {
                                 placeholder="Sua chave da API Gemini"
                                 className="w-full px-6 py-5 text-lg bg-slate-900/50 border-2 border-slate-700 rounded-2xl text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 transition-all duration-300 outline-none hover:border-slate-600"
                             />
-                            {errors.geminiApiKey && (
-                                <p className="text-red-400 text-base mt-2 ml-2">{errors.geminiApiKey.message}</p>
+                            {errors.apiKey && (
+                            <p className="text-red-400 text-base mt-2 ml-2">{errors.apiKey.message}</p>
                             )}
                             <p className="text-slate-400 text-base mt-3 ml-2">
                                 Obtenha sua chave em{' '}
