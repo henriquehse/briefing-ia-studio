@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    /* Typography Scale - Mais legível e hierarquizado */
+    html {
+        font-size: 20px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-900;
+        font-feature-settings: "rlig" 1, "calt" 1;
+        font-size: 1.125rem;
+        /* 18px base */
+        line-height: 1.7;
+    }
+
+    h1 {
+        @apply text-5xl md:text-6xl font-bold tracking-tight;
+    }
+
+    h2 {
+        @apply text-3xl md:text-4xl font-bold tracking-tight;
+    }
+
+    h3 {
+        @apply text-2xl md:text-3xl font-semibold;
+    }
+
+    p {
+        @apply text-lg leading-relaxed;
+    }
+}
+
+@layer components {
+
+    /* Glassmorphism Premium */
+    .glass-card {
+        @apply bg-white/80 backdrop-blur-xl border border-white/40 shadow-2xl;
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.08),
+            0 2px 8px rgba(0, 0, 0, 0.04),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+
+    /* Botão Primário - Gradiente Animado */
+    .btn-primary {
+        @apply px-8 py-4 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 text-white font-semibold rounded-xl shadow-lg;
+        @apply hover:shadow-2xl hover:scale-105 active:scale-95;
+        @apply transition-all duration-500 ease-out;
+        background-size: 200% 100%;
+        background-position: left;
+    }
+
+    .btn-primary:hover {
+        background-position: right;
+    }
+
+    /* Botão Secundário com Hover Refinado */
+    .btn-secondary {
+        @apply px-8 py-4 bg-white text-slate-700 font-semibold rounded-xl border-2 border-slate-300;
+        @apply hover:bg-slate-50 hover:border-slate-400 hover:shadow-lg hover:-translate-y-0.5;
+        @apply transition-all duration-300 ease-out;
+    }
+
+    /* Input Field Premium */
+    .input-field {
+        @apply w-full px-5 py-4 text-lg rounded-xl border-2 border-slate-300;
+        @apply focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20;
+        @apply transition-all duration-300 ease-out outline-none;
+        @apply hover:border-slate-400;
+    }
+
+    /* Card Hover Premium */
+    .card-hover {
+        @apply transition-all duration-500 ease-out;
+        @apply hover:scale-105 hover:shadow-2xl hover:-translate-y-2;
+    }
+}
+
+@layer utilities {
+
+    /* Fade In Premium */
+    .animate-fade-in {
+        animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Slide Up Premium */
+    .animate-slide-up {
+        animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Gradiente Animado Premium */
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    /* Pulse Suave */
+    .animate-pulse-soft {
+        animation: pulseSoft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulseSoft {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.7;
+        }
+    }
+
+    /* Glow Effect */
+    .glow-on-hover {
+        @apply transition-all duration-300;
+    }
+
+    .glow-on-hover:hover {
+        box-shadow:
+            0 0 20px rgba(59, 130, 246, 0.5),
+            0 0 40px rgba(59, 130, 246, 0.3),
+            0 0 60px rgba(59, 130, 246, 0.1);
+    }
+}
